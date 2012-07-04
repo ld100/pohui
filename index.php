@@ -1,5 +1,6 @@
 <?php
 $url = 'http://sdelanounas.in.ua/index/rss/';
+$junk_content = ' - RSS';
 include_once(getcwd().'/lib/simplepie/SimplePieAutoloader.php');
 include_once(getcwd().'/lib/simplepie/idn/idna_convert.class.php');
 $feed = new SimplePie();
@@ -66,7 +67,7 @@ $feed->handle_content_type();
 
     <div class="container">
 
-      <h1><a href="<?php echo $feed->get_permalink(); ?>"><?php echo $feed->get_title(); ?></a> | <a href="http://lurkmore.to/%D0%92%D1%81%D0%B5%D0%BC_%D0%BF%D0%BE%D1%85%D1%83%D0%B9">всем похуй</a></h1>
+      <h1><a href="<?php echo $feed->get_permalink(); ?>"><?php echo str_replace($junk_content, "", $feed->get_title()); ?></a> | <a href="http://lurkmore.to/%D0%92%D1%81%D0%B5%D0%BC_%D0%BF%D0%BE%D1%85%D1%83%D0%B9">всем похуй</a></h1>
 	<br />
 	<p><ul>
       <?php
