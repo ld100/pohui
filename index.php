@@ -1,5 +1,6 @@
 <?php
 $url = 'http://sdelanounas.in.ua/index/rss/';
+$korrespondent_url = 'http://k.img.com.ua/rss/ru/news.xml';
 $junk_content = ' - RSS';
 include_once(getcwd().'/lib/simplepie/SimplePieAutoloader.php');
 include_once(getcwd().'/lib/simplepie/idn/idna_convert.class.php');
@@ -7,6 +8,13 @@ $feed = new SimplePie();
 $feed->set_feed_url($url);
 $feed->init();
 $feed->handle_content_type();
+
+$korrespondent_feed = new SimplePie();
+$korrespondent_feed->set_feed_url($korrespondent_url);
+$korrespondent_feed->init();
+$korrespondent_feed->handle_content_type();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -69,16 +77,41 @@ $feed->handle_content_type();
 
       <h1><a href="<?php echo $feed->get_permalink(); ?>"><?php echo str_replace($junk_content, "", $feed->get_title()); ?></a> | <a href="http://lurkmore.to/%D0%92%D1%81%D0%B5%D0%BC_%D0%BF%D0%BE%D1%85%D1%83%D0%B9">всем похуй</a></h1>
 	<br />
-	<p><ul>
-      <?php
-	/*
-	Here, we'll loop through all of the items in the feed, and $item represents the current item in the loop.
-	*/
-	foreach ($feed->get_items() as $item):
-	?>
-		<li><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?>, но всем похуй!</a></li>
-	<?php endforeach; ?>
-	</ul></p>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span9">
+          		<h2>Новости Украины</h2>
+				<p><ul>
+			      <?php
+				/*
+				Here, we'll loop through all of the items in the feed, and $item represents the current item in the loop.
+				*/
+				foreach ($feed->get_items() as $item):
+				?>
+					<li><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?>, но всем похуй!</a></li>
+				<?php endforeach; ?>
+				</ul></p>
+			</div><!--/.well -->
+		</div><!--/span-->
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span9">
+          		<h2>Главные мировые новости</h2>
+				<p><ul>
+			      <?php
+				/*
+				Here, we'll loop through all of the items in the feed, and $item represents the current item in the loop.
+				*/
+				foreach ($korrespondent_feed->get_items() as $item):
+				?>
+					<li><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?>, но всем похуй!</a></li>
+				<?php endforeach; ?>
+				</ul></p>
+			</div><!--/.well -->
+		</div><!--/span-->
+	</div>
 	
 	<div class="row-fluid">
 		<div class="span4">
