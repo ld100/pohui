@@ -33,7 +33,7 @@ $korrespondent_feed->handle_content_type();
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
-	.hero-unit {
+	.hero-unit, .local-shit {
 		padding: 10px;
 	}
     </style>
@@ -83,6 +83,7 @@ $korrespondent_feed->handle_content_type();
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span9">
+				<div class="local-shit">
           		<h2>Новости Украины</h2>
 				<p><ul>
 			      <?php
@@ -94,6 +95,7 @@ $korrespondent_feed->handle_content_type();
 					<li><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?>, но всем похуй!</a></li>
 				<?php endforeach; ?>
 				</ul></p>
+				</div>
 			</div><!--/.well -->
 		</div><!--/span-->
 	</div>
