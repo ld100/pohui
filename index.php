@@ -57,8 +57,8 @@ $feed->handle_content_type();
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="#">Главная</a></li>
-              <li><a href="#about">О сайте</a></li>
-              <li><a href="#contact">Связаться</a></li>
+              <li><a href="http://mourk.com/">О сайте</a></li>
+              <li><a href="http://mourk.com/contact/">Связаться</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
