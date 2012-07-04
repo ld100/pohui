@@ -79,6 +79,31 @@ $feed->handle_content_type();
 		<li><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?>, но всем похуй!</a></li>
 	<?php endforeach; ?>
 	</ul></p>
+	
+	<div class="row-fluid">
+		<div class="span4">
+			<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="ld100" data-lang="ru">Твитнуть</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        </div><!--/span-->
+        <div class="span4">
+			<!-- Place this tag where you want the +1 button to render -->
+			<g:plusone></g:plusone>
+
+			<!-- Place this tag after the last plusone tag -->
+			<script type="text/javascript">
+			  window.___gcfg = {lang: 'ru'};
+
+			  (function() {
+			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			    po.src = 'https://apis.google.com/js/plusone.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			  })();
+			</script>			
+        </div><!--/span-->
+        <div class="span4">
+			<div id="fb-root"></div><script src="http://connect.facebook.net/ru_RU/all.js#xfbml=1"></script><fb:like href="" send="false" layout="button_count" width="150" show_faces="false" font=""></fb:like>			
+        </div><!--/span-->
+	</div>
+
     </div> <!-- /container -->
 
   </body>
