@@ -33,6 +33,9 @@ $korrespondent_feed->handle_content_type();
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
+	.hero-unit {
+		padding: 10px;
+	}
     </style>
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -98,7 +101,8 @@ $korrespondent_feed->handle_content_type();
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span9">
-          		<h2>Главные мировые новости</h2>
+				<div class="hero-unit">
+				<h2>Главные мировые новости</h2>
 				<p><ul>
 			      <?php
 				/*
@@ -109,6 +113,7 @@ $korrespondent_feed->handle_content_type();
 					<li><a href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?>, но всем похуй!</a></li>
 				<?php endforeach; ?>
 				</ul></p>
+				</div>
 			</div><!--/.well -->
 		</div><!--/span-->
 	</div>
